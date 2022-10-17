@@ -1,0 +1,32 @@
+.popup-visible {
+    -webkit-animation: openPopup 0.5s linear 0.3s both;
+    animation: openPopup 0.5s linear 0.3s both;
+}
+
+@-webkit-keyframes openPopup {
+    0% {
+        clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
+    }
+
+    50% {
+        clip-path: polygon(0 0, 100% 0%, 100% 42%, 0 57%);
+    }
+
+    100% {
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes openPopup {
+    0% {
+        clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
+    }
+
+    50% {
+        clip-path: polygon(0 0, 100% 0%, 100% 42%, 0 57%);
+    }
+
+    100% {
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+    }
+}

@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Roboto', sans-serif;
+    padding: 0 calc(17px - (100vw - 100%)) 0 0;
+    background-color: #ddd6fe;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.progress {
+    background: linear-gradient(90deg, rgba(18, 231, 48, 1) 0%, rgba(0, 212, 255, 1) 100%);
+}
+
+.animate {
+    -webkit-animation: blink-1 0.6s both;
+    animation: blink-1 0.6s both;
+}
+
+@-webkit-keyframes blink-1 {
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+@keyframes blink-1 {
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+    25%,
+    75% {
+        opacity: 0;
+    }
+}

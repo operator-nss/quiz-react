@@ -1,0 +1,62 @@
+
+
+.category-button {
+    position: relative;
+    overflow: hidden;
+}
+.category-button::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.8),0 0 20px rgba(255,255,255,0.8),0 0 30px rgba(255,255,255,0.8),0 0 10px rgba(255,255,255,0.8),0 0 20px rgba(255,255,255,0.8),0 0 30px rgba(255,255,255,0.8);
+    height: 100px;
+    background-color: #fff;
+    transform: rotate(60deg);
+    top: -20px;
+    left: -100px;
+    filter: blur(15px);
+    z-index: 2;
+}
+.category-button::after {
+    content: '';
+    position: absolute;
+    left: -500px;
+    top: -55px;
+    background-color: #38bdf8;
+    width: 400px;
+    height: 200px;
+    transform: skew(-60deg,0);
+}
+
+.category-button:hover:before {
+    transform: translateX(500px);
+    transition: 0.8s transform 0.3s;
+}
+
+.category-button:hover:after {
+    transform: translateX(500px);
+    transition: 1s transform 0s;
+}
+
+
+.difficult {
+    position: relative;
+    overflow: hidden;
+}
+
+.difficult:before {
+    content: '';
+    position: absolute;
+    top: -320%;
+    left: 0;
+    width: 150%;
+    height: 150%;
+    transform: skew(0,-20deg);
+    background-color: yellow;
+    transition: 1s transform 0s;
+    will-change: transform;
+}
+
+.active-difficult.difficult:before {
+    transform: translateY(172px);
+}
