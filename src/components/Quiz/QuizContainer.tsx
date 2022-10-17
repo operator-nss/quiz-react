@@ -11,7 +11,7 @@ import Progress from '../Progress/Progress';
 import Quiz, {question} from './Quiz';
 import './quizContainer.css';
 
-const QuizContainer: FC = () => {
+const QuizContainer: FC = React.memo(() => {
   const {questionsItems, rightAnswers, questionNumber} = useAppSelector(
     (state) => state.questions
   );
@@ -90,6 +90,6 @@ const QuizContainer: FC = () => {
       </div>
     </main>
   );
-};
+});
 
 export default QuizContainer;

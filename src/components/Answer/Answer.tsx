@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import React, { FC, useEffect, useState } from 'react';
+import React, {FC, useCallback, useEffect, useState} from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { setSelectAnswer } from '../../redux/slices/QuestionSlice';
 import IconArrow from '../IconArrow/IconArrow';
@@ -19,10 +19,10 @@ const Answer: FC<AnswerProps> = ({ title, rightAnswers, answered }) => {
   const { selectedAnswers } = useAppSelector((state) => state.questions);
   const findItem = rightAnswers?.find((item) => item === title);
 
-  const selectAnswer = () => {
+  const selectAnswer = useCallback(() => {
     setSelected(!selected);
     dispatch(setSelectAnswer(title));
-  };
+  },[]);
 
   useEffect(() => {
     if (!answered) {

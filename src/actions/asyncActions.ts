@@ -11,9 +11,6 @@ export const fetchQuestions = createAsyncThunk<question[], SearchQuestionParams>
   'questions/fetchQuestions',
   async (params, {rejectWithValue}) => {
     const {category, difficulty} = params;
-//     if(category = '') {
-//       difficulty = difficulty.replace('&', '?')
-//     }
     try {
       const {data} = await axios.get<question[]>(
         `https://quizapi.io/api/v1/questions${category}${difficulty}`,

@@ -6,7 +6,7 @@ import {useAppDispatch} from '../../hooks/hooks';
 import {setDifficult} from '../../redux/slices/FilterSlice';
 import {setResetQuiz} from '../../redux/slices/QuestionSlice';
 
-const Navbar: FC = () => {
+const Navbar: FC = React.memo(() => {
   const dispatch = useAppDispatch();
   const {pathname} = useLocation();
 
@@ -58,6 +58,6 @@ const Navbar: FC = () => {
       </div>
     </header>
   );
-};
+});
 
 export default Navbar;

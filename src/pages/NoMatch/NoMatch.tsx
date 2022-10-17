@@ -10,7 +10,7 @@ const NoMatch: FC = () => (
     <div className="text-center">
       <Link
         to="/"
-        className="mx-auto mt-6 inline-flex rounded border px-6 py-3 transition-colors hover:bg-emerald-500 hover:text-white"
+        className="mx-auto mt-6 inline-flex rounded border bg-white px-6 py-3 transition-colors hover:bg-emerald-500 hover:text-white"
       >
         Вернуться на главную
       </Link>

@@ -1,13 +1,13 @@
 import clsx from 'clsx';
-import React, { FC, useEffect, useState } from 'react';
-import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
+import React, {FC, useCallback, useEffect, useState} from 'react';
+import {useAppDispatch, useAppSelector} from '../../hooks/hooks';
 import {
   setQuestionNumber,
   setRightNumber,
   setSelectAnswer,
 } from '../../redux/slices/QuestionSlice';
 import Answer from '../Answer/Answer';
-import { difficultArr } from '../DifficultPopup/DifficultPopup';
+import {difficultArr} from '../DifficultPopup/DifficultPopup';
 
 export interface question {
   answers: object;
@@ -24,25 +24,25 @@ export interface question {
 }
 
 const Quiz: FC<question> = ({
-  answers,
-  category,
-  correct_answer,
-  correct_answers,
-  description,
-  difficulty,
-  explanation,
-  multiple_correct_answers,
-  question,
-  tip,
-  id,
-}) => {
-  const { questionsItems, selectedAnswers, questionNumber } = useAppSelector(
+                              answers,
+                              category,
+                              correct_answer,
+                              correct_answers,
+                              description,
+                              difficulty,
+                              explanation,
+                              multiple_correct_answers,
+                              question,
+                              tip,
+                              id,
+                            }) => {
+  const {questionsItems, selectedAnswers, questionNumber} = useAppSelector(
     (state) => state.questions
   );
-  const { categoryId } = useAppSelector((state) => state.filters);
+  const {categoryId} = useAppSelector((state) => state.filters);
   const [answered, setAnswered] = useState(false);
   const [rightAnswers, setRightAnswers] = useState<string[]>();
-  const { difficultyQuiz } = useAppSelector((state) => state.filters);
+  const {difficultyQuiz} = useAppSelector((state) => state.filters);
 
   const dispatch = useAppDispatch();
 
@@ -78,10 +78,10 @@ const Quiz: FC<question> = ({
   };
 
   const multiQuestions = () => (
-      <div>
-        &apos;Выберите <span className="font-bold underline">несколько</span> вариантов ответа&apos;
-      </div>
-    );
+    <div>
+      &apos;Выберите <span className="font-bold underline">несколько</span> вариантов ответа&apos;
+    </div>
+  );
 
   return (
     <>
@@ -93,12 +93,12 @@ const Quiz: FC<question> = ({
               (категория{' '}
               <span
                 className={clsx(
-                  { 'text-red-500': categoryId === 0 },
-                  { 'text-orange-500': categoryId === 1 },
-                  { 'text-lime-500': categoryId === 2 },
-                  { 'text-teal-500': categoryId === 3 },
-                  { 'text-blue-500': categoryId === 4 },
-                  { 'text-fuchsia-500': categoryId === 5 },
+                  {'text-red-500': categoryId === 0},
+                  {'text-orange-500': categoryId === 1},
+                  {'text-lime-500': categoryId === 2},
+                  {'text-teal-500': categoryId === 3},
+                  {'text-blue-500': categoryId === 4},
+                  {'text-fuchsia-500': categoryId === 5},
                   'font-bold underline'
                 )}
               >
@@ -112,9 +112,9 @@ const Quiz: FC<question> = ({
               Сложность:{' '}
               <span
                 className={clsx(
-                  { 'text-red-500': difficultyQuiz === 3 },
-                  { 'text-orange-500': difficultyQuiz === 2 },
-                  { 'text-lime-500': difficultyQuiz === 1 },
+                  {'text-red-500': difficultyQuiz === 3},
+                  {'text-orange-500': difficultyQuiz === 2},
+                  {'text-lime-500': difficultyQuiz === 1},
                   'font-bold'
                 )}
               >
@@ -132,8 +132,8 @@ const Quiz: FC<question> = ({
         {Object.entries(answers)
           ?.filter((item: any) => item[1] !== null)
           ?.map((item: any, i: number) => (
-              <Answer rightAnswers={rightAnswers} answered={answered} key={i} title={item[1]} />
-            ))}
+            <Answer rightAnswers={rightAnswers} answered={answered} key={i} title={item[1]}/>
+          ))}
       </ul>
 
       {questionsItems.length > questionNumber - 1 ? (
