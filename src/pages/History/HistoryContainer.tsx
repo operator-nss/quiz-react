@@ -28,16 +28,14 @@ const HistoryContainer: FC = () => {
         <h2 className="text-center text-2xl font-bold">
           {historyItems?.length === 0 ? 'Истории игр нет' : 'История'}
         </h2>
-        {historyItems?.map((item, i) => {
-          return (
+        {historyItems?.map((item, i) => (
             <History
               key={i}
               date={item.date}
               questions={item.questions}
               rightAnswers={item.rightAnswers}
             />
-          );
-        })}
+          ))}
         <div className="text-center">
           {historyItems?.length ? (
             <Link
@@ -49,7 +47,7 @@ const HistoryContainer: FC = () => {
               сброс
             </Link>
           ) : (
-            <div className={'mt-10 text-2xl font-bold'}>
+            <div className="mt-10 text-2xl font-bold">
               <div>
                 <img className="mx-auto" src={toni} alt="" />
               </div>

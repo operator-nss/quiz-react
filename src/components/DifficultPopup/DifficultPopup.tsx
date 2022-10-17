@@ -26,9 +26,8 @@ const DifficultPopup: FC<DifficultPopupProps> = ({
   };
 
   return (
-    <div className="rounded-lg popup-visible absolute left-1/2 top-16 mx-auto -translate-x-1/2 divide-y divide-slate-100 overflow-hidden rounded border bg-white shadow">
-      {difficultArr?.map((item, i) => {
-        return (
+    <div className="popup-visible absolute left-1/2 top-16 mx-auto -translate-x-1/2 divide-y divide-slate-100 overflow-hidden rounded-lg rounded border bg-white shadow">
+      {difficultArr?.map((item, i) => (
           <button
             key={i}
             onClick={() => chooseDifficult(i)}
@@ -43,8 +42,7 @@ const DifficultPopup: FC<DifficultPopupProps> = ({
           >
             {item.toUpperCase()}
           </button>
-        );
-      })}
+        ))}
     </div>
   );
 };

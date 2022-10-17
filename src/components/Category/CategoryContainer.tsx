@@ -71,8 +71,7 @@ const CategoryContainer: FC = () => {
       <div className="mx-auto mt-10 max-w-5xl rounded-lg border bg-white px-10 pt-8 pb-12">
         <h2 className="mb-10 text-center text-2xl font-bold">Выберите категорию</h2>
         <div className="grid grid-cols-3 gap-8">
-          {categories?.map((item: categoriesType, i: number) => {
-            return (
+          {categories?.map((item: categoriesType, i: number) => (
               <button
                 key={i}
                 onClick={() => setCategoryId(i)}
@@ -80,14 +79,12 @@ const CategoryContainer: FC = () => {
               >
                 <span className="relative z-10">{item.name}</span>
               </button>
-            );
-          })}
+            ))}
         </div>
 
         <div className="mt-8 flex justify-center text-center">
           <div ref={popupRef} className="relative">
-            {
-              <button
+            <button
                 onClick={setPopup}
                 className={clsx(
                   { 'active-difficult': openPopup },
@@ -105,7 +102,6 @@ const CategoryContainer: FC = () => {
                   alt=""
                 />
               </button>
-            }
             {openPopup && (
               <DifficultPopup
                 setOpenPopup={setOpenPopup}

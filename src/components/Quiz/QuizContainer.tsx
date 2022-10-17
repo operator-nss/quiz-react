@@ -24,8 +24,7 @@ const QuizContainer: FC = () => {
   }, [questionNumber, questionsItems]);
 
   return (
-    <>
-      <main className="container">
+    <main className="container">
         <div className="relative mx-auto mt-10 max-w-5xl rounded-lg border bg-white py-8 px-10">
           <div className="mb-8 flex items-center">
             <div className="whitespace-nowrap">
@@ -90,7 +89,6 @@ const QuizContainer: FC = () => {
           ) : null}
         </div>
       </main>
-    </>
   );
 };
 

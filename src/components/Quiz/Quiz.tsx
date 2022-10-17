@@ -77,13 +77,11 @@ const Quiz: FC<question> = ({
     setRightAnswers(result);
   };
 
-  const multiQuestions = () => {
-    return (
+  const multiQuestions = () => (
       <div>
         &apos;Выберите <span className="font-bold underline">несколько</span> вариантов ответа&apos;
       </div>
     );
-  };
 
   return (
     <>
@@ -133,11 +131,9 @@ const Quiz: FC<question> = ({
       <ul className="mx-auto max-w-4xl">
         {Object.entries(answers)
           ?.filter((item: any) => item[1] !== null)
-          ?.map((item: any, i: number) => {
-            return (
+          ?.map((item: any, i: number) => (
               <Answer rightAnswers={rightAnswers} answered={answered} key={i} title={item[1]} />
-            );
-          })}
+            ))}
       </ul>
 
       {questionsItems.length > questionNumber - 1 ? (

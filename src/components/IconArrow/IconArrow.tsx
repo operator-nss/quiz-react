@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 
-const IconArrow: FC = () => {
-  return (
+const IconArrow: FC = () => (
     <div className="scale-150">
       <svg
         stroke="currentColor"
@@ -16,6 +15,5 @@ const IconArrow: FC = () => {
       </svg>
     </div>
   );
-};
 
 export default IconArrow;

@@ -6,10 +6,10 @@ import Preloader from './components/Preloader/Preloader';
 
 const App = () => {
   const History = React.lazy(
-    () => import(/* webpackChunkName: "HistoryContainer" */ './pages/History/HistoryContainer')
+    () => import(/* webpackChunkName: "HistoryContainer" */ './pages/History/HistoryContainer'),
   );
   const NoMatch = React.lazy(
-    () => import(/* webpackChunkName: "NoMatch" */ './pages/NoMatch/NoMatch')
+    () => import(/* webpackChunkName: "NoMatch" */ './pages/NoMatch/NoMatch'),
   );
   const RulesLazy = React.lazy(() => import(/* webpackChunkName: "Rules" */ './pages/Rules/Rules'));
 
@@ -65,6 +65,6 @@ const App = () => {
       </div>
     </BrowserRouter>
   );
-};
+}
 
 export default App;

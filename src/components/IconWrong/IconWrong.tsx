@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 
-const IconWrong: FC = () => {
-  return (
+const IconWrong: FC = () => (
     <div className="scale-75">
       <svg
         fill="#FFFFFF"
@@ -14,6 +13,5 @@ const IconWrong: FC = () => {
       </svg>
     </div>
   );
-};
 
 export default IconWrong;

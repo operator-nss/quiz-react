@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 
-const Rules: FC = () => {
-  return (
+const Rules: FC = () => (
     <div className="container">
       <div className="mx-auto mt-10 max-w-5xl rounded-lg border bg-white px-10 pt-8 pb-12">
         <h2 className="mb-10 text-center text-2xl font-bold">Правила</h2>
@@ -39,6 +38,5 @@ const Rules: FC = () => {
       </div>
     </div>
   );
-};
 
 export default Rules;

@@ -7,13 +7,12 @@ import ResultQuiz from '../ResultQuiz/ResultQuiz';
 
 const Layout = () => {
   const { questionsItems, restartQuiz, questionNumber } = useAppSelector(
-    (state) => state.questions
+    (state) => state.questions,
   );
 
-  const content =
-    questionsItems.length && questionNumber !== 20 ? <QuizContainer /> : <ResultQuiz />;
+  const content = questionsItems.length && questionNumber !== 20 ? <QuizContainer /> : <ResultQuiz />;
   const loading = questionsItems.length ? content : <Preloader />;
   return <>{restartQuiz ? loading : <CategoryContainer />}</>;
-};
+}
 
 export default Layout;
