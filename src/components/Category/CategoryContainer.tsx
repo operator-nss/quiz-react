@@ -33,7 +33,7 @@ const CategoryContainer: FC = () => {
     (id: number) => {
       dispatch(setCategory(id));
       const categorie = categories[id].name.toLowerCase();
-      let category = '';
+      let category = '?category=';
       if (categorie !== 'random') {
         category = `?category=${categorie}`;
       }
@@ -41,6 +41,8 @@ const CategoryContainer: FC = () => {
       if (difficultyQuiz !== 0) {
         difficulty = `&difficulty=${difficultArr[difficultyQuiz]}`;
       }
+      console.log(category,'category')
+      console.log(difficulty,'difficulty')
       dispatch(fetchQuestions({ category, difficulty }));
       dispatch(setRestartQuiz());
     },
@@ -68,9 +70,9 @@ const CategoryContainer: FC = () => {
 
   return (
     <div className="container">
-      <div className="mx-auto mt-10 max-w-5xl rounded-lg border bg-white px-10 pt-8 pb-12">
-        <h2 className="mb-10 text-center text-2xl font-bold">Выберите категорию</h2>
-        <div className="grid grid-cols-3 gap-8">
+      <div className="mx-auto mt-10 max-w-5xl rounded-lg border bg-white px-5 pt-8 pb-12 md:px-10">
+        <h2 className="mb-5 text-center text-2xl font-bold md:mb-10">Выберите категорию</h2>
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
           {categories?.map((item: categoriesType, i: number) => (
               <button
                 key={i}
@@ -88,7 +90,7 @@ const CategoryContainer: FC = () => {
                 onClick={setPopup}
                 className={clsx(
                   { 'active-difficult': openPopup },
-                  'difficult mx-auto flex items-center justify-between gap-x-10 rounded border px-16 py-4 transition-colors hover:bg-blue-300'
+                  'difficult mx-auto flex items-center justify-between gap-x-5 rounded border px-6 py-4 transition-colors hover:bg-blue-300 md:gap-x-10 md:px-16'
                 )}
               >
                 <span className="relative z-10">

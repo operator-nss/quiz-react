@@ -85,7 +85,7 @@ const Quiz: FC<question> = ({
 
   return (
     <>
-      <h2 className="mb-8 text-center text-2xl font-bold">
+      <h2 className="mb-8 text-center text-base font-bold sm:text-xl md:text-2xl">
         {question}
         <div className="text-base">
           {category ? (

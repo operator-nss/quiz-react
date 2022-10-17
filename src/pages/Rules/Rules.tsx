@@ -2,10 +2,10 @@ import React, { FC } from 'react';
 
 const Rules: FC = () => (
     <div className="container">
-      <div className="mx-auto mt-10 max-w-5xl rounded-lg border bg-white px-10 pt-8 pb-12">
+      <div className="mx-auto mt-10 max-w-5xl rounded-lg border bg-white px-5 pt-8 pb-12 md:px-10">
         <h2 className="mb-10 text-center text-2xl font-bold">Правила</h2>
 
-        <ul>
+        <ul className='flex flex-col gap-y-5 text-sm leading-6 md:text-base'>
           <li>
             1. Выберите сложность викторины(по умолчанию сложность <b>&apos;Random&apos;</b>).
           </li>

@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import {FC} from 'react';
 import {useAppDispatch, useAppSelector} from '../../hooks/hooks';
 import {setDifficult} from '../../redux/slices/FilterSlice';
+import './difficultPopup.css'
 
 type DifficultPopupProps = {
   setOpenPopup: any;

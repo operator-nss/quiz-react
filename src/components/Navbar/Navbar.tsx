@@ -1,14 +1,14 @@
-import React, { FC } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import React, {FC} from 'react';
+import {NavLink, useLocation} from 'react-router-dom';
 import chooseImage from '../../assets/choose.png';
 import quizImage from '../../assets/quiz.png';
-import { useAppDispatch } from '../../hooks/hooks';
-import { setDifficult } from '../../redux/slices/FilterSlice';
-import { setResetQuiz } from '../../redux/slices/QuestionSlice';
+import {useAppDispatch} from '../../hooks/hooks';
+import {setDifficult} from '../../redux/slices/FilterSlice';
+import {setResetQuiz} from '../../redux/slices/QuestionSlice';
 
 const Navbar: FC = () => {
   const dispatch = useAppDispatch();
-  const { pathname } = useLocation();
+  const {pathname} = useLocation();
 
   const activeStyle = {
     color: '#fff',
@@ -26,34 +26,34 @@ const Navbar: FC = () => {
     <header className="w-screen bg-blue-300">
       <div className="container">
         <div className="flex items-center">
-          <img width={50} className="mr-10" src={quizImage} alt="quiz" />
+          <img width={50} className="hidden md:block" src={quizImage} alt="quiz"/>
           <NavLink
             end
             to="/"
             onClick={reloadApp}
-            style={({ isActive }) => (isActive ? activeStyle : undefined)}
-            className="inline-flex border-x px-10 py-5 transition-colors hover:bg-blue-400"
+            style={({isActive}) => (isActive ? activeStyle : undefined)}
+            className="inline-flex border-x px-2 py-3 transition-colors hover:bg-blue-400 sm:px-5 md:px-10 md:py-5"
           >
             {' '}
             Quiz
           </NavLink>
           <NavLink
             to="/history"
-            style={({ isActive }) => (isActive ? activeStyle : undefined)}
-            className="inline-flex border-r px-10 py-5 transition-colors hover:bg-blue-400"
+            style={({isActive}) => (isActive ? activeStyle : undefined)}
+            className="inline-flex border-r px-2 py-3 transition-colors hover:bg-blue-400 sm:px-5 md:px-10 md:py-5"
           >
             {' '}
             История игр
           </NavLink>
           <NavLink
             to="/rules"
-            style={({ isActive }) => (isActive ? activeStyle : undefined)}
-            className="inline-flex border-r px-10 py-5 transition-colors hover:bg-blue-400"
+            style={({isActive}) => (isActive ? activeStyle : undefined)}
+            className="inline-flex border-r px-2 py-3 transition-colors hover:bg-blue-400 sm:px-5 md:px-10 md:py-5"
           >
             {' '}
             Правила
           </NavLink>
-          <img width={50} className="ml-10" src={chooseImage} alt="choose" />
+          <img width={50} className="ml-10 hidden md:block" src={chooseImage} alt="choose"/>
         </div>
       </div>
     </header>

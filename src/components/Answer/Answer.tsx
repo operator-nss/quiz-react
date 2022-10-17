@@ -47,7 +47,7 @@ const Answer: FC<AnswerProps> = ({ title, rightAnswers, answered }) => {
           { '!bg-red-600': wrongIcon },
           { 'bg-orange-500 text-white': selected },
           { 'animate !bg-emerald-700 text-white': findItem && answered },
-          ' mb-4 flex h-14 w-full items-center justify-between rounded-lg border px-6 py-4 text-left transition-colors enabled:hover:bg-purple-500 enabled:hover:text-white'
+          ' mb-4 flex min-h-[56px] w-full items-center justify-between gap-x-2 rounded-lg border px-3 py-2 text-left transition-colors enabled:hover:bg-purple-500 enabled:hover:text-white md:px-6 md:py-4'
         )}
       >
         {title}

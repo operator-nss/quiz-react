@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
 const IconWrong: FC = () => (
-    <div className="scale-75">
+    <div className="relative h-6 -translate-y-1">
       <svg
         fill="#FFFFFF"
         xmlns="http://www.w3.org/2000/svg"

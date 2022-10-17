@@ -24,7 +24,7 @@ const HistoryContainer: FC = () => {
 
   return (
     <div className="container">
-      <div className="mx-auto mt-10 max-w-5xl rounded-lg border bg-white py-8 px-10">
+      <div className="mx-auto mt-10 max-w-5xl rounded-lg border bg-white py-8 px-5 md:px-10">
         <h2 className="text-center text-2xl font-bold">
           {historyItems?.length === 0 ? 'Истории игр нет' : 'История'}
         </h2>

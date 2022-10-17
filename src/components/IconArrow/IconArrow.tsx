@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
 const IconArrow: FC = () => (
-    <div className="scale-150">
+    <div className="h-6  scale-150">
       <svg
         stroke="currentColor"
         fill="currentColor"
