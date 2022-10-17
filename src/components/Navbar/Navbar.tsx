@@ -26,7 +26,7 @@ const Navbar: FC = React.memo(() => {
     <header className="w-screen bg-blue-300">
       <div className="container">
         <div className="flex items-center">
-          <img width={50} className="hidden md:block" src={quizImage} alt="quiz"/>
+          <img width={50} className="hidden mr-10 md:block" src={quizImage} alt="quiz"/>
           <NavLink
             end
             to="/"
